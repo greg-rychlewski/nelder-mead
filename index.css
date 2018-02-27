@@ -1,0 +1,119 @@
+/* General */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Helvetica";
+}
+
+body{
+	color: #fff;
+	background-color: #333;
+}
+
+a{
+	color: #ffffb8;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+/* Container for entire page */
+#main-container{
+	width: 100%;
+	position: relative;
+	min-height: 100%;
+}
+
+/* Page Title */
+h2{
+	font-weight: 400;
+	font-size: 30px;
+}
+
+#title{
+	color: #fdfdfd;
+	text-align: center;
+	padding: 30px 15px 30px 15px;
+}
+
+/* Middle section (graph elements) */
+#outer-graph-container{
+	width: 100%;
+	height: 55%;
+	background-color: #fff;
+}
+
+#graph-container{
+	margin: 0 auto;
+	width: 95%;
+	max-width: 600px;
+	color: #fff;
+	font-size: 13px;
+}
+
+#graph{
+	cursor: pointer;
+}
+
+.tick text{
+	font-size: 10px;
+}
+
+/* Description text at bottom */
+
+#info{
+	margin: 0 auto;
+	width:90%;
+	max-width: 800px;
+	text-align: justify;
+	font-size: 16px;
+	color: #fdfdfd;
+}
+
+#info p{
+	padding-bottom: 20px;
+}
+
+.header{
+	text-align: center;
+	font-weight: 600;
+	font-size: 20px;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.math{
+	font-style: oblique;
+}
+
+/* Responsiveness */
+@media screen and (max-width: 500px){
+	h2{
+		font-size: 24px;
+	}
+
+	#title{
+		padding: 20px 10px 20px 10px;
+	}
+
+	#graph-container{
+		font-size: 10px;
+	}
+
+	#info{
+		font-size: 14px;
+	}
+
+	#info p{
+		padding-bottom: 15px;
+	}
+
+	.header{
+		font-size: 17px;
+		padding-top: 20px;
+		padding-bottom: 15px;
+	}
+}

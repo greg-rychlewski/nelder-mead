@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id="main-container">
+			<div id="title"><h2>Nelder-Mead Visualizer</h2></div>
+			<div id="outer-graph-container"><div id="graph-container"></div></div>
+			<div id="info">
+				<div class="header"><span>Instructions</span></div>
+				<p> 
+					The graph above is a plot of <a target="_blank" href="https://en.wikipedia.org/wiki/Himmelblau%27s_function">Himmelblau's function</a>. It takes <span class="math">x</span> and <span class="math">y</span> coordinates as inputs and outputs a value <span class="math">f(x,y) = (x<sup>2</sup> + y - 11)<sup>2</sup> + (x + y<sup>2</sup> - 7)<sup>2</sup></span>. Green areas correspond to higher values of the function, while dark areas correspond to lower values. The glowing red dots correspond to points where the function reaches its minimum value.
+				</p>
+				<p>
+					To use this app, click anywhere on the graph. The <a target="_blank" href="https://en.wikipedia.org/wiki/Nelder%E2%80%93Mead_method">Nelder-Mead</a> algorithm will take the coordinates of your click and use them to find one of the minimum values. It does so using the geometrical concept of a <a target="_blank" href="https://en.wikipedia.org/wiki/Simplex"> simplex</a>, which in two dimensions is a triangle.
+				</p>
+				<p>Click <a target="_blank">here</a> for the Github repository to this app.</p>
+			</div>
+		</div>
+		<script src="d3-v4-min.js"></script>
+		<script src="d3-contour-v1-min.js"></script>
+		<script src="data.js"></script>
+		<script src="nm.js"></script>
+		<script src="index.js"></script>
+	</body>
+</html>
