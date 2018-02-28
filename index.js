@@ -345,11 +345,17 @@ function initGraph(){
 	           .attr("id", "f-val");
 
 	// Help text telling user they can zoom
+	if (window.innerWidth > cutoffWidth){
+		var scrollAction = "Scroll";
+	}else{
+		var scrollAction = "Pinch";
+	}
+	
 	zoomHelpText = graphArea.append("text")
                               .attr("text-anchor", "middle")
                               .attr("fill", helpTextColor)
                               .attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")")
-                              .text("Use Scroll to Zoom")
+                              .text("Use " + scrollAction + " to Zoom")
                               .on("mouseover", function(){zoomHelpText.remove();});
 	
 	// Start minimum point animation
