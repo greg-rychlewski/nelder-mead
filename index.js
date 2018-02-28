@@ -178,7 +178,6 @@ function showCoords(e, show){
 
 // Iniitalize graph on page load
 function initGraph(){
-	console.log(window.innerWidth);
 	// Set size and margin of plotting area
 	var clientSize = d3.select("#graph-container").node().getBoundingClientRect();
 	setMargins()
