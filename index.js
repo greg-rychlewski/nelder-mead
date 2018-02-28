@@ -195,8 +195,7 @@ function initGraph(){
 	root = d3.select("#graph-container")
 			 .append("svg")
 			   .attr("width", width + margin.left + margin.right)
-			   .attr("height", height + margin.top + margin.bottom)
-			   .call(zoom);
+			   .attr("height", height + margin.top + margin.bottom);
 
 	clipArea = root.append("defs")
 				   .append("clipPath")
@@ -223,7 +222,8 @@ function initGraph(){
 						  showCrosshair(this, false);
 						  showCoords(this, false);
 					  })
-					  .on("click", animateNelderMead);
+					  .on("click", animateNelderMead)
+					  .call(zoom);
 
 	contourPlot = graphArea.selectAll("path")
 							 .data(contours(z))
@@ -350,7 +350,7 @@ function initGraph(){
 	}else{
 		var scrollAction = "Pinch";
 	}
-	
+
 	zoomHelpText = graphArea.append("text")
                               .attr("text-anchor", "middle")
                               .attr("fill", helpTextColor)
