@@ -8,7 +8,7 @@
 // Display properties
 var crosshairWidth = 0.5;
 var minRadius = 0.05, radarRadius = 0.2;
-var minZoom = 1, maxZoom = 5;
+var minZoom = 1, maxZoom = 3;
 var simulate = false;
 var radarColor = "#ff0000";
 var helpTextColor = "#fff";
