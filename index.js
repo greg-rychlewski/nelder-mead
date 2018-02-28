@@ -22,8 +22,8 @@ var cutoffWidth = 500; // Responsive cutoff point
 // Contour plot properties
 var thresholds = d3.merge([d3.range(d3.min(z), 50, 10), d3.range(100, d3.max(z), 100)]);
 var contours = d3.contours()
-				 .size([n, m])
-				 .thresholds(thresholds);
+                 .size([n, m])
+                 .thresholds(thresholds);
 var color = d3.scaleLinear()
 			  .domain(d3.extent(thresholds))
 			  .range(['#222', 'yellow'])
