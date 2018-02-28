@@ -239,7 +239,7 @@ function initGraph(){
 
 	yScale = d3.scaleLinear() 
 			   .domain([d3.min(y), d3.max(y)])
-			  .range([height, 0]);
+			   .range([height, 0]);
 
 	currScale = {
 		x: xScale,
@@ -251,7 +251,7 @@ function initGraph(){
 
 	gY = root.append("g")
 			   .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-			.call(yAxis);
+			   .call(yAxis);
 
 	gX = root.append("g")
 			   .attr("transform", "translate(" + margin.left + "," + (margin.top + height) + ")")
@@ -282,13 +282,13 @@ function initGraph(){
 						   .attr("cy", function(d){return yScale(d.y)});
 
 	radarCircle = graphArea.selectAll(".min")
-							 .data(d3.merge([mins, mins]))
+						     .data(d3.merge([mins, mins]))
 						   .enter().append("circle")
-							 .attr("class", "min")
-							 .attr("fill", radarColor)
-							 .attr("stroke", radarColor)
-							 .attr("cx", function(d){return xScale(d.x)})
-							 .attr("cy", function(d){return yScale(d.y)});
+						     .attr("class", "min")
+						     .attr("fill", radarColor)
+						     .attr("stroke", radarColor)
+						     .attr("cx", function(d){return xScale(d.x)})
+						     .attr("cy", function(d){return yScale(d.y)});
 
 	// Set crosshair
 	hLine = graphArea.append("line")
@@ -301,48 +301,48 @@ function initGraph(){
 	vLine = graphArea.append("line")
 					   .style("opacity", 0)
 					   .attr("y1", 0)
-	                   .attr("y2", height)
-	                   .attr("stroke", crosshairColor)
-	                   .attr("stroke-width", crosshairWidth);
+					   .attr("y2", height)
+					   .attr("stroke", crosshairColor)
+					   .attr("stroke-width", crosshairWidth);
 
 	// Create display to hold current coordinates/function value
 	coordBox = root.append("rect")
-	                 .style("opacity", 0)
-	                 .attr("x", margin.left + width / 8)
-	                 .attr("y", margin.top / 4)
-	                 .attr("width", 3 * width / 4)
-	                 .attr("height", margin.top / 2)
-	                 .attr("stroke", coordTextColor)
-	                 .attr("stroke-width", 0.3)
-	                 .attr("fill", coordBoxColor);
+					 .style("opacity", 0)
+					 .attr("x", margin.left + width / 8)
+					 .attr("y", margin.top / 4)
+					 .attr("width", 3 * width / 4)
+					 .attr("height", margin.top / 2)
+					 .attr("stroke", coordTextColor)
+					 .attr("stroke-width", 0.3)
+					 .attr("fill", coordBoxColor);
 
 	coordText = root.append("text")
-	                  .style("opacity", 0)
-	                  .style("white-space", "pre")
-	                  .attr("text-anchor", "middle")
-	                  .attr("dy", "0.35em")
-	                  .attr("transform", "translate(" + (margin.left + width / 2) + "," + margin.top / 2 + ")");
+					  .style("opacity", 0)
+					  .style("white-space", "pre")
+					  .attr("text-anchor", "middle")
+					  .attr("dy", "0.35em")
+					  .attr("transform", "translate(" + (margin.left + width / 2) + "," + margin.top / 2 + ")");
 
 	coordText.append("tspan")
-	           .text("x:  ")
-	           .style("font-weight", "bold");
+			   .text("x:  ")
+			   .style("font-weight", "bold");
 
 	coordText.append("tspan")
-	           .attr("id", "x-coord");
+			   .attr("id", "x-coord");
 
 	coordText.append("tspan")
-	           .text("     y:  ")
-	           .style("font-weight", "bold");
+			   .text("     y:  ")
+			   .style("font-weight", "bold");
 
 	coordText.append("tspan")
-	           .attr("id", "y-coord");
+               .attr("id", "y-coord");
 
 	coordText.append("tspan")
-	           .text("     f(x,y):  ")
-	           .style("font-weight", "bold");
+			   .text("     f(x,y):  ")
+			   .style("font-weight", "bold");
 
 	coordText.append("tspan")
-	           .attr("id", "f-val");
+               .attr("id", "f-val");
 
 	// Help text telling user they can zoom
 	if (window.innerWidth > cutoffWidth){
@@ -352,11 +352,11 @@ function initGraph(){
 	}
 
 	zoomHelpText = graphArea.append("text")
-                              .attr("text-anchor", "middle")
-                              .attr("fill", helpTextColor)
-                              .attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")")
-                              .text("Use " + scrollAction + " to Zoom")
-                              .on("mouseover", function(){zoomHelpText.remove();});
+							  .attr("text-anchor", "middle")
+							  .attr("fill", helpTextColor)
+							  .attr("transform", "translate(" + (width / 2) + "," + (height / 2) + ")")
+							  .text("Use " + scrollAction + " to Zoom")
+							  .on("mouseover", function(){zoomHelpText.remove();});
 	
 	// Start minimum point animation
 	radarSignal();
@@ -382,18 +382,18 @@ function reDraw(){
 
 	// Adjust size of plot elements
 	root.attr("width", width + margin.left + margin.right)
-	    .attr("height", height + margin.top + margin.bottom);
+        .attr("height", height + margin.top + margin.bottom);
 
 	clipArea.attr("width", width)
-	        .attr("height", height);
+            .attr("height", height);
 
 	graphArea.attr("height", height)
-	         .attr("width", width)
-	         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+			 .attr("width", width)
+			 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 	contourPlot.attr("d", d3.geoPath(d3.geoIdentity().scale(width / m)))
-	           .attr("fill", function(d){return color(d.value);})
-	           .attr("stroke", "#666");
+			   .attr("fill", function(d){return color(d.value);})
+			   .attr("stroke", "#666");
 
 	// Adjust axes, labels and scales
 	xScale.range([0, width]);
@@ -418,11 +418,11 @@ function reDraw(){
 
 	// Adjust minimum points
 	minCircle.attr("r", scaledDistance("x", minRadius))
-	         .attr("cx", function(d){return xScale(d.x)})
-	         .attr("cy", function(d){return yScale(d.y)});
+			 .attr("cx", function(d){return xScale(d.x)})
+			 .attr("cy", function(d){return yScale(d.y)});
 
 	radarCircle.attr("cx", function(d){return xScale(d.x)})
-	           .attr("cy", function(d){return yScale(d.y)});
+               .attr("cy", function(d){return yScale(d.y)});
 
 	// Adjust crosshair
 	hLine.attr("x2", width);
@@ -431,9 +431,9 @@ function reDraw(){
 	// Adjust coordinates display
 	coordText.attr("transform", "translate(" + (margin.left + width / 2) + "," + margin.top / 2 + ")");
 	coordBox.attr("x", margin.left + width / 8)
-	        .attr("y", margin.top / 4)
-	        .attr("width", 3 * width / 4)
-	        .attr("height", margin.top / 2);
+			.attr("y", margin.top / 4)
+			.attr("width", 3 * width / 4)
+			.attr("height", margin.top / 2);
 
 	// Adjust zoom help text
 	zoomHelpText.attr("transform", "translate(" + (margin.left + width / 2) + "," + (margin.top + height / 2) + ")");

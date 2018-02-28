@@ -72,17 +72,17 @@ function disableUser(){
 function enableUser(){
     d3.select("#triangle").remove();
     graphArea.on("mouseover", function(){
-                  showCrosshair(this, true);
-                  showCoords(this, true);
-              })
+                 showCrosshair(this, true);
+                 showCoords(this, true);
+             })
              .on("mousemove", function(){
-                  showCrosshair(this, true);
-                  showCoords(this, true);
-              })
+                 showCrosshair(this, true);
+                 showCoords(this, true);
+             })
              .on("mouseout", function(){
-                  showCrosshair(this, false);
-                  showCoords(this, false);
-              })
+                 showCrosshair(this, false);
+                 showCoords(this, false);
+             })
              .on("click", animateNelderMead);
     document.getElementById("graph").style.cursor = "pointer";
     simulate = false;
@@ -227,7 +227,7 @@ function animateNelderMead(){
                                   .attr("id", "triangle")
                                   .attr("stroke", "red")
                                   .attr("fill", "none")
-                                .attr("d", trianglePath([triangles[0][0], triangles[0][0], triangles[0][0]]));
+                                  .attr("d", trianglePath([triangles[0][0], triangles[0][0], triangles[0][0]]));
 
     triangles.forEach(function(d, index){
         currTriangle = currTriangle.transition()
