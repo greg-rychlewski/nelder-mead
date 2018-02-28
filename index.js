@@ -246,8 +246,8 @@ function initGraph(){
         y: yScale
     };
 
-    xAxis = d3.axisBottom(xScale).tickSizeOuter(0);
-    yAxis = d3.axisLeft(yScale).tickSizeOuter(0);
+    xAxis = d3.axisBottom(xScale).ticks(6).tickSizeOuter(0);
+    yAxis = d3.axisLeft(yScale).ticks(6).tickSizeOuter(0);
 
     gY = root.append("g")
                .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
@@ -404,8 +404,8 @@ function reDraw(){
         y: yScale
     };
 
-    xAxis = d3.axisBottom(xScale);
-    yAxis = d3.axisLeft(yScale);
+    xAxis = d3.axisBottom(xScale).ticks(6).tickSizeOuter(0);
+    yAxis = d3.axisLeft(yScale).ticks(6).tickSizeOuter(0);
 
     gY.attr("transform", "translate(" + margin.left + "," + margin.top + ")").call(yAxis);
     gX.attr("transform", "translate(" + margin.left + "," + (margin.top + height) + ")").call(xAxis);
