@@ -102,6 +102,10 @@ h2{
 		font-size: 10px;
 	}
 
+	.tick text{
+		font-size: 7px;
+	}
+
 	#info{
 		font-size: 14px;
 	}
