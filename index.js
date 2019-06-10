@@ -415,7 +415,6 @@ function reDraw(){
     yLabel.attr("transform", "translate(" + labelPosition.y  + "," + (margin.top + (height / 2)) + ")");
     xLabel.attr("transform", "translate(" + (margin.left + (width / 2)) + "," + labelPosition.x + ")");
 
-
     // Adjust minimum points
     minCircle.attr("r", scaledDistance("x", minRadius))
              .attr("cx", function(d){return xScale(d.x)})

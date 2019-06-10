@@ -36,7 +36,15 @@ h2{
 #title{
 	color: #fdfdfd;
 	text-align: center;
-	padding: 30px 15px 30px 15px;
+	padding: 15px;
+}
+
+/* Instructions */
+#instructions {
+	color: #000;
+	text-align: center;
+	background: #fff;
+	padding-top: 15px;
 }
 
 /* Middle section (graph elements) */
@@ -118,5 +126,9 @@ h2{
 		font-size: 17px;
 		padding-top: 20px;
 		padding-bottom: 15px;
+	}
+
+	#instructions {
+		display: none;
 	}
 }
